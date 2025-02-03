@@ -16,9 +16,9 @@ exports.handler=async function(event,context){
     const mailOptions = {
         from: process.env.GMAIL_USER,  // Sender email (your Gmail address)
         to: 'zubinchadha@gmail.com',  // Replace with your recipient's email address
-        subject: `New message from ${name}`,
-        text: `You have received a message from ${name} (${email})`,
-        html: `<p>You have received a message from <strong>${name}</strong> (${email})</p>`
+        subject: `New message from alan`,
+        text: `You have received a message from alan email`,
+        html: `<p>You have received a message from <strong>gibson</strong> teamwork</p>`
     };
 
     // Send the email
@@ -27,7 +27,7 @@ exports.handler=async function(event,context){
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: `Email sent successfully to ${email}` }),
+            body: JSON.stringify({ message: `Email sent successfully to zubinchadha@gmail.com` }),
         };
     } catch (error) {
         console.error(error);
