@@ -27,7 +27,7 @@ exports.handler=async function(event,context){
         billing_zip, 
         total_amount, 
         status, 
-        invoice_date,invoice_pdf,invoice_name  } = requestBody;
+        invoice_date,invoice_pdf,invoice_name,mer_amount,trans_fee,service_tax  } = requestBody;
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',  // Using Gmail SMTP service
@@ -162,7 +162,7 @@ exports.handler=async function(event,context){
 </html>`,
 attachments: [
             {
-                filename: invoice_pdf || 'invoice.pdf',
+                filename: invoice_name|| 'invoice.pdf',
                 content: Buffer.from(invoice_pdf, 'base64'),
                 contentType: 'application/pdf',
             },
@@ -187,3 +187,6 @@ attachments: [
         };
     }
 }
+
+
+ 
