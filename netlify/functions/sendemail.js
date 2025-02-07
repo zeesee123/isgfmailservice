@@ -40,7 +40,7 @@ exports.handler=async function(event,context){
     // Email setup
     const mailOptions = {
         from: 'zubinchadha@gmail.com',  // Sender email (your Gmail address)
-        to: 'zubinchadha@gmail.com',  // Replace with your recipient's email address
+        to: `${billing_email}`,  // Replace with your recipient's email address
         subject: `Invoice for Order ${order_number}`,
         text: `Hello ${billing_name},\n\nYou have successfully placed an order with the following details:\n\nOrder Number: ${order_number}\nCurrency: ${currency}\nPayment Mode: ${payment_mode}\nTotal Amount: ${total_amount}\n\nThank you for shopping with us!`,
         html: `<!DOCTYPE html>
@@ -94,7 +94,7 @@ exports.handler=async function(event,context){
         }
         .cta-button {
             display: inline-block;
-            background-color: #007BFF;
+            background-color: yellow;
             color: #ffffff;
             padding: 10px 15px;
             text-decoration: none;
@@ -150,7 +150,7 @@ exports.handler=async function(event,context){
             </tr>
         </table>
 
-        <a href="${link}" class="cta-button">Download Invoice</a>
+        <a href="${link}" class="cta-button">View Compendium PDF</a>
 
         <p>Thank you for shopping with us!</p>
         
