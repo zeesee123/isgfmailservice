@@ -125,7 +125,7 @@ exports.handler=async function(event,context){
                 <td>${order_number}</td>
             </tr>
                <tr>
-                <th>Order Number</th>
+                <th>Tracking Id</th>
                 <td>${tracking_id}</td>
             </tr>
             <tr>
