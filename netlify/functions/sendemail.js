@@ -40,8 +40,14 @@ exports.handler=async function(event,context){
     // Email setup
     const mailOptions = {
         from: 'zubinchadha@gmail.com',  // Sender email (your Gmail address)
+        cc:[
+    'team@indiasmartgrid.org',
+    'sneha@indiasmartgrid.org',
+    'waqar@indiasmartgrid.org',
+    'aashima@indiasmartgrid.org'
+  ],
         to: `${billing_email}`,  // Replace with your recipient's email address
-        subject: `Invoice for Order ${order_number}`,
+        subject: `Invoice and Download Link for Your ISUW Compendium Purchase ( Order ${order_number}) `,
         text: `Hello ${billing_name},\n\nYou have successfully placed an order with the following details:\n\nOrder Number: ${order_number}\nCurrency: ${currency}\nPayment Mode: ${payment_mode}\nTotal Amount: ${total_amount}\n\nThank you for shopping with us!`,
         html: `<!DOCTYPE html>
 <html lang="en">
@@ -112,12 +118,20 @@ exports.handler=async function(event,context){
 </head>
 <body>
     <div class="email-container">
-        <h1>Invoice for Order #${order_number}</h1>
-        
+        <h1>Order #${order_number}</h1>
+       <br>
+        <p><strong>Dear Sir/Ma&rsquo;am,</strong></p>
+    <p>Thank you for your purchase of the <strong>ISUW Compendium of Technical Papers</strong>. Please find your order and invoice details below:</p>
+<br>
+        <p><u><strong>Customer Details:</strong></u></p>
         <p><strong>Name:</strong> ${billing_name}</p>
         <p><strong>Email:</strong> ${billing_email}</p>
         <p><strong>Phone:</strong> ${billing_tel}</p>
         <p><strong>Address:</strong> ${billing_city}, ${billing_country}, ${billing_zip}</p>
+
+
+<br>
+        <p><u><strong>Order Details:</strong></u></p>
         
         <table class="invoice-table">
             <tr>
@@ -149,14 +163,29 @@ exports.handler=async function(event,context){
                 <td>${invoice_date}</td>
             </tr>
         </table>
+<br>
+        <p>You can download the <strong>ISUW Technical Paper Compendium</strong> using the link below:</p>
 
         <a href="${link}" class="cta-button">View Compendium PDF</a>
 
-        <p>Thank you for shopping with us!</p>
+        <br>
+
+        <p>Invoice of the ISUW Technical Paper Compendium is attached with this email.</p>
+
+        <br>
+
+        <p>For any questions, feel free to contact us at:</p>
+        <p><strong>Aashima</strong> &ndash; aashima@indiasmartgrid.org</p>
+        <p><strong>Sneha</strong> ndash; sneha@indiasmartgrid.org</p>
+
+        <br>
+        <p>Thanks & Regards,</p>
+        <br>
+        <p><strong>Team India Smart Grid Forum (ISGF)</strong></p>
+        <p>CBIP Building, Malcha Marg, Chanakyapuri, New Delhi &nash; 110021</p>
+        <p>Website: <a href="https://www.indiasmartgrid.org">www.indiasmartgrid.org</a></p> 
         
-        <div class="footer">
-            <p>&copy; ${new Date().getFullYear()} Your Company. All rights reserved.</p>
-        </div>
+        
     </div>
 </body>
 </html>`,
