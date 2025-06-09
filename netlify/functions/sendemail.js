@@ -32,14 +32,17 @@ exports.handler=async function(event,context){
     const transporter = nodemailer.createTransport({
         service: 'gmail',  // Using Gmail SMTP service
         auth: {
-            user: 'zubinchadha@gmail.com',  // Your Gmail email address
-            pass: 'jydcahsvmthpnmiy'  // Use your app password here if using 2FA
+            // user: 'zubinchadha@gmail.com',  // Your Gmail email address
+            // pass: 'jydcahsvmthpnmiy'  // Use your app password here if using 2FA
+            user: 'team@indiasmartgrid.org"',  // Your Gmail email address
+            pass: 'ynqrckoqrvzocxqv'  // Use your app password here if using 2FA
         }
     });
 
     // Email setup
     const mailOptions = {
-        from: 'zubinchadha@gmail.com',  // Sender email (your Gmail address)
+        // from: 'zubinchadha@gmail.com',  // Sender email (your Gmail address)
+          from: 'team@indiasmartgrid.org"',  // Sender email (your Gmail address)
         cc:[
     'team@indiasmartgrid.org',
     'sneha@indiasmartgrid.org',
