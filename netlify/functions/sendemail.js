@@ -179,7 +179,7 @@ exports.handler=async function(event,context){
 
         <p>For any questions, feel free to contact us at:</p>
         <p><strong>Aashima</strong> &ndash; aashima@indiasmartgrid.org</p>
-        <p><strong>Sneha</strong> ndash; sneha@indiasmartgrid.org</p>
+        <p><strong>Sneha</strong> &ndash; sneha@indiasmartgrid.org</p>
 
         <br>
         <p>Thanks & Regards,</p>
