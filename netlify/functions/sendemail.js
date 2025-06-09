@@ -34,7 +34,7 @@ exports.handler=async function(event,context){
         auth: {
             // user: 'zubinchadha@gmail.com',  // Your Gmail email address
             // pass: 'jydcahsvmthpnmiy'  // Use your app password here if using 2FA
-            user: 'team@indiasmartgrid.org"',  // Your Gmail email address
+            user: 'team@indiasmartgrid.org',  // Your Gmail email address
             pass: 'ynqrckoqrvzocxqv'  // Use your app password here if using 2FA
         }
     });
